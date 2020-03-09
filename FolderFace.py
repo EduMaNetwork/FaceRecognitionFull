@@ -1,5 +1,4 @@
 import face_recognition
-import cv2
 import os
 import shutil
 
@@ -13,7 +12,9 @@ count = 0
 for sf in os.listdir(inputFilePath):
     if(os.path.isfile(os.path.join(inputFilePath,sf))):
         count += 1
-
+if count < 0:
+    print("Tanima islemi yapilacak klasorde resim bulunamadi! Lutfen Uygulama klasoru icerisine TanimliYuzler adinda bir klasor oldugunu ve icerisinde ayiklama yapilacak kisilere ait"
+          " .jpg uzantili resimlerin bulundugunu kontrol ediniz.")
 print("Toplam " , str(count) + " adet resim taranacak")
 #klasörden tanımlanacak yüzleri ve dosya isimlerini topluyoruz
 for file in os.listdir(inputFilePath):
